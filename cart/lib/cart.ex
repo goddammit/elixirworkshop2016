@@ -10,6 +10,17 @@ defmodule Cart do
    []
  end
 
+ def show(alist) do
+   uniqs = unique(alist)
+  # Enum.map(uniqs, fn )
+ end
+
+  def counter(alist, item) do
+    Enum.count(alist, fn action -> action == {:+, item} end) - Enum.count(alist, fn action -> action == {:-, item} end)
+
+
+  end
+
  def unique([]) do
   []
  end
