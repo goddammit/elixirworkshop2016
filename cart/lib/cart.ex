@@ -12,7 +12,7 @@ defmodule Cart do
 
  def show(alist) do
    uniqs = unique(alist)
-  # Enum.map(uniqs, fn )
+   Enum.map(uniqs,fn x -> {counter(alist,x), x} end )
  end
 
   def counter(alist, item) do

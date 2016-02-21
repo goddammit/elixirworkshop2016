@@ -11,7 +11,10 @@ defmodule CartTest do
 
   test "show cart" do
     assert Cart.show([]) == []
-   assert Cart.show([{:+, 'banana'}]) == [{1, 'banana'}]
+    assert Cart.show([{:+, 'banana'}]) == [{1, 'banana'}]
+    assert Cart.show([{:+, 'banana'},{:+, 'banana'}]) == [{2, 'banana'}]
+    assert Cart.show([{:+, 'banana'}]) == [{1, 'banana'}]
+    assert Cart.show([{:+, 'banana'},{:-, 'banana'}, {:+, 'apple'}]) == [{0, 'banana'},{1, 'apple'}]
   end
 
   test "show unique" do
